@@ -1,0 +1,19 @@
+name = "cipher-log"
+main = "worker.js"
+compatibility_date = "2024-04-01"
+
+# ✅ 1. 自有域名
+routes = [
+	{ pattern = "log.aillm.net", custom_domain = true }
+]
+
+# ✅ 2. D1 数据库绑定
+[[d1_databases]]
+binding = "DB"
+database_name = "cipher-db"
+database_id = "2252f679-a409-4711-9ca4-1d77f7aa12dd"
+
+# ✅ 3. 日志全开
+[observability]
+enabled = true
+head_sampling_rate = 1.0
